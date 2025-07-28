@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Soumya | PLC Programming Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="STYLES/main.css" />
+  <!-- Responsive Stylesheet -->
+  <link rel="stylesheet" href="STYLES/responsive.css" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+ <!-- HEADER -->
+<header class="site-header">
+  <div class="container header-flex">
+    <h1 class="site-title">Soumya<span>PLC</span></h1>
+    
+    <button class="menu-toggle" id="menuToggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+  <nav class="navbar nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="SOUMYASAMANTA_2025.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h2>Hi, I'm Soumya</h2>
+      <p>PLC Programmer passionate about automation and industrial control systems. This is my portfolio to showcase real-world projects and skills.</p>
+      <a href="#projects" class="btn-primary">View Projects</a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h3>About Me</h3>
+      <p> I’m an aspiring Automation Engineer with hands-on experience in PLC programming, ladder logic design, and industrial control systems. 
+    Passionate about simplifying complex processes, I specialize in creating reliable automation solutions using Siemens S7-300, 
+    basic relay logic, and SCADA integration. With a strong foundation in electrical engineering and a growing project portfolio, 
+    I aim to bridge the gap between traditional manufacturing and smart automation.
+      </p>
+    </div>
+  </section>
+  <section id="resume" class="resume-section container">
+  <h3>Resume</h3>
+  <p>You can download my resume below to know more about my qualifications and experience.</p>
+  <a href="SOUMYASAMANTA_2025.pdf" download class="btn-primary">Download Resume</a>
+</section>
+
+  
+
+  <!-- PROJECTS SECTION -->
+<section id="projects" class="section features-section">
+  <h2 class="section-title">PLC Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+    <h3><a href="projects/project1.html">Water Tank Level Control</a></h3>
+    <p>Monitored and maintained water levels...</p>
+    </div>
+    <div class="project-card">
+    <h3><a href="projects/project2.html">Automatic Car Wash System</a></h3>
+    <p>Designed using Siemens S7-300 PLC...</p>
+    </div>
+    <div class="project-card">
+    <h3><a href="projects/project3.html">Conveyor Sorting System</a></h3>
+    <p>Used sensors and timers to automatically detect...</p>
+    </div>
+    <div class="project-card">
+    <h3><a href="projects/project4.html">4-Way Traffic Light Controller</a></h3>
+    <p>Created a smart signal control system...</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fas fa-cogs"></i> PLC Programming</div>
+      <div class="skill-card"><i class="fas fa-microchip"></i> SCADA</div>
+      <div class="skill-card"><i class="fas fa-project-diagram"></i> Ladder Logic</div>
+      <div class="skill-card"><i class="fas fa-wrench"></i> HMI Design</div>
+      <div class="skill-card"><i class="fas fa-code"></i> TIA Portal</div>
+      <div class="skill-card"><i class="fas fa-desktop"></i> Simatic Manager</div> <!-- NEW -->
+      <div class="skill-card"><i class="fab fa-html5"></i> HTML/CSS</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h3>Contact Me</h3>
+    <p>
+      <i class="fas fa-envelope"></i>
+      Email: <a href="mailto:soumyasamanta2003@gmail.com">soumyasamanta2003@gmail.com</a>
+    </p>
+    <p>
+       <i class="fab fa-linkedin"></i>
+      LinkedIn: <a href="https://linkedin.com/in/soumya-samanta-ee" target="_blank">linkedin.com/in/soumya-samanta</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Soumya Samanta. All rights reserved.</p>
+  </div>
+</footer>
+
+  <!-- Optional Minimal JavaScript -->
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menuToggle");
+    const nav = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      menuToggle.classList.toggle("active");
+    });
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+/* MAIN CSS - Soumya's PLC Programming Portfolio */
+  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.section-title {
+  text-align: center;
+  margin: 2rem 0 1rem;
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+a {
+  text-decoration: none;
+  color: #0077cc;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+/* Header */
+.site-header {
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+
+.site-title span {
+  color: #007acc;
+}
+
+/* Navbar */
+.site-header {
+  background-color: #101820;
+  color: #ffffff;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.site-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.site-title span {
+  color: #f9d342;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color:#101820;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+/* Hamburger hidden by default on large screens */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+/* Hero Section */
+/* Hero Section */
+.hero {
+  background-color: #1a1a1a; /* Dark to match the header */
+  color: #ffffff;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #f9d342; /* Accent yellow */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hero-content p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  line-height: 1.6;
+}
+
+/* Button style matching theme */
+.btn-primary {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: #f9d342; /* same as header accent */
+  color: #101820;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6c02b;
+}
+
+
+/* About Section */
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem; /* optional spacing */
+}
+
+.about-section h3 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #f9d342;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  color: #224488;
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa); /* cleaner background */
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #ddd;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #224488; /* matching deep navy blue for titles */
+  margin-bottom: 12px;
+}
+
+.project-card h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-card h3 a:hover {
+  color: #f9d342; /* highlight on hover */
+}
+
+.project-card p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+
+
+
+.pdf-download-section {
+  background-color: #f4f4f4;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.pdf-download-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.pdf-download-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.skills-section {
+  padding: 60px 20px;
+  background-color: #f7faff;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.skill-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  background-color: #e9f1ff;
+}
+
+.skill-card i {
+  color: #3366cc;
+}
+
+
+
+
+/* Contact Section */
+.contact-section {
+  background: #f9f9fc;
+  padding: 60px 20px;
+  text-align: center;
+}
+.contact-section i {
+  margin-right: 8px;
+  color: #224488;
+}
+
+.contact-section h3 {
+  color: #224488; /* same as project title/nav heading */
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.contact-section a {
+  color: #224488;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-section a:hover {
+  color: #f9d342; /* yellow hover highlight */
+}
+
+/* Footer */
+.site-footer {
+  background-color: #224488;
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+  font-size: 14px;
+}
+
+.site-footer a {
+  color: #f9d342;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}

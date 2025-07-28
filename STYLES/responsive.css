@@ -1,0 +1,112 @@
+/* RESPONSIVE CSS - Soumya's PLC Portfolio */
+
+/* Tablet View (≤ 992px) */
+@media (max-width: 992px) {
+  .header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+  }
+
+  .skills-list li,
+  .certificate-list li {
+    font-size: 15px;
+    padding: 10px 16px;
+    margin: 6px;
+  }
+
+  .project-card {
+    padding: 20px;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile View (≤ 768px) */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #101820;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .navbar {
+    padding: 0;
+  } 
+  
+  .site-title {
+    margin-bottom: 1rem;
+  }
+
+
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Hamburger animation */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Small Devices (≤ 480px) */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .site-footer {
+    font-size: 0.8rem;
+  }
+
+  .skills-list li,
+  .certificate-list li {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+}

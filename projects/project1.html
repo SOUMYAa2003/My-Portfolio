@@ -1,0 +1,119 @@
+<!-- project1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tank Level Control System - Project</title>
+  <link rel="stylesheet" href="../styles/project.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <h1 class="project-title">🚰 Tank Level Control System</h1>
+    <p class="subtitle">A PLC-based Water Level Monitoring & Control Project</p>
+  </div>
+</header>
+
+  <main class="container">
+
+    <!-- Project Overview -->
+    <section class="project-overview">
+      <h2>📘 Project Overview</h2>
+      <p>This PLC project monitors and controls the water level of a tank using Siemens S7-1200. It includes manual and automatic start/stop features, buzzer alerts, and safety interlocks. Ideal for industrial water management scenarios.</p>
+    </section>
+
+    <!-- Main Project Image -->
+    <section class="main-project-image">
+      <img src="../images/plc-tank-setup.png" alt="Main PLC Tank Setup" />
+    </section>
+
+    <!-- Project Description -->
+    <section class="project-description">
+      <p>
+        This project involves designing an automatic tank level monitoring system using Siemens S7-1200 PLC and analog level sensors. The system triggers a pump when water falls below the minimum set level and shuts it off at the maximum level.
+      </p>
+    </section>
+
+    <!-- Step-by-Step Images with Explanations -->
+    <section class="project-steps">
+
+      <div class="step">
+        <img src="../images/1.PNG" alt="PLC Wiring" />
+        <p><b>⚙️ Network 1: Manual Start Logic and Latching</b></p>
+        <h3>🔄 Latch-Start Logic using <code>M0.0</code> – Step-by-Step Overview</h3>
+        <ul class="custom-list">
+          <li><span class="tag-input">I0.0</span> – Manual Start Button (Normally Open): Used to initiate the system manually.</li>
+          <li><span class="tag-input">I0.1</span> – Low Water Level Switch: A permissive condition allowing the pump to start only if water is low.</li>
+          <li><span class="tag-memory">M0.0</span> – Internal Memory Bit: Gets <em>SET</em> by the logic to hold the ON state like a latch.</li>
+          <li>Once <code>I0.0</code> is pressed and <code>I0.1</code> is active, <code>M0.0</code> turns ON and stays latched.</li>
+          <li>💡 <em>Even if the Start button is released</em>, <code>M0.0</code> stays ON as long as the condition remains true.</li>
+          <li>📝 <strong>Note:</strong> <code>M0.0</code> acts like an internal version of <code>Q0.0</code> to preserve system state.</li>
+        </ul>
+      </div>
+
+      <hr />
+
+      <div class="step">
+        <img src="../images/2.PNG" alt="Ladder Logic" />
+        <p><b>⛔ Network 2: Manual Stop or High Level Stop + Buzzer Alarm</b></p>
+        <p><span class="tag-input">I0.2</span> – Manual Stop Button.</p>
+        <p><span class="tag-input">I0.3</span> – High Water Level Switch.</p>
+        <p>If either one is pressed/activated, <code>M0.0</code> is reset via the (R) coil.</p>
+        <p>Timer <code>T1 (S_PULSE)</code> is triggered to create a short pulse.</p>
+        <p>The pulse output <span class="tag-output">Q0.1</span> triggers the buzzer to alert the user that the tank is full or the system is stopped.</p>
+        <p>📝 This network ensures safe operation and gives an audio indication for stop/full conditions.</p>
+      </div>
+
+      <hr />
+
+      <div class="step">
+        <img src="../images/3.PNG" alt="HMI Screen" />
+        <p><b>💧 Network 3: Pump Operation</b></p>
+        <p>Purpose: Control the pump output <span class="tag-output">Q0.0</span> using the memory bit <code>M0.0</code>.</p> 
+        <p>If <code>M0.0</code> is ON, the Pump turns ON.</p>
+        <p>📝 <code>M0.0</code> acts as the master control condition throughout the logic.</p>
+      </div>
+
+      <hr />
+
+      <div class="step">
+        <img src="../images/4.PNG" alt="Testing Process" />
+        <p><b>🚨 Network 4: Emergency Stop on Very Low Water Level</b></p>
+        <p><span class="tag-input">I0.4</span> – Very Low Water Level Switch.</p>
+        <p>If activated, it immediately resets <code>M0.0</code>, turning off the pump and stopping the system for safety.</p>
+        <p>📝 This is a safety interlock to prevent dry run or pump damage.</p>
+      </div>
+
+      <hr />
+
+      <div class="step summary-box">
+        <h3>🧠 Summary: Role of Memory Bit <code>M0.0</code></h3>
+        <ul>
+          <li><strong>Set in Network 1:</strong> When Start button is pressed and low water level is present.</li>
+          <li><strong>Reset in Network 2:</strong> When Stop button or High level switch is activated.</li>
+          <li><strong>Reset in Network 4:</strong> During Emergency Stop (Very Low Water Level).</li>
+          <li><strong>Used in Network 3:</strong> To control the Pump <span class="tag-output">Q0.0</span>.</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <section class="pdf-download-section">
+    <div class="container">
+      <h2>📄 Full Ladder Logic Program</h2>
+      <p>You can download the complete ladder logic PDF of this project below.</p>
+      <a href="WATER LEVEL TANK.pdf" download class="btn-primary">Download PDF</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
