@@ -1,0 +1,175 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafc;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  color: rgb(251, 255, 0); /* Yellow */
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #1a237e;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #1a237e;
+  margin-bottom: 0.5em;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(135deg, #263238, #455a64);
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 3px solid #1c313a;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #eee;
+  color: #555;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Overview Section */
+.project-overview {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* Project Image */
+.main-project-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* Titles and Descriptions */
+.project-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-top: 10px;
+  color: #cfd8dc;
+}
+
+.project-description p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* Project Steps */
+.project-steps .step {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.project-steps .step img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Lists */
+.custom-list,
+.step ul {
+  list-style-type: '👉 ';
+  padding-left: 1.8em;
+}
+
+.step ul li {
+  margin-bottom: 10px;
+}
+
+/* Tags/Badges */
+.tag-input {
+  background-color: #e0f7fa;
+  color: #006064;
+}
+
+.tag-output {
+  background-color: #ede7f6;
+  color: #4527a0;
+}
+
+.tag-memory {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.tag-input,
+.tag-output,
+.tag-memory {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9em;
+  font-family: monospace;
+}
+
+/* Summary Box */
+.summary-box {
+  background-color: #f1f8ff;
+  border-left: 4px solid #1565c0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* PDF Download Section */
+.pdf-download-section {
+  background-color: #f0f4ff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3f51b5;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #303f9f;
+}

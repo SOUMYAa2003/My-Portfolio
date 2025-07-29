@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Traffic Light Control System - Project</title>
+        <link rel="stylesheet" href="../STYLES/project2.css" />
+    </head>
+    <body>
+
+        <header class="site-header">
+            <div class="container">
+                <h1 class="project-title">🚦 Traffic Light Control System</h1>
+                <p class="subtitle">A PLC-based Traffic Signal Controller with
+                    Timing Logic</p>
+            </div>
+        </header>
+
+        <main class="container">
+
+            <!-- Project Overview -->
+            <section class="project-overview">
+                <h2>📘 Project Overview</h2>
+                <p>This PLC project simulates a four-road traffic signal using
+                    Siemens S7-300. The lights change based on programmed
+                    timers, ensuring safe and sequential traffic flow. The logic
+                    incorporates green, yellow, and red transitions with precise
+                    timing.</p>
+            </section>
+
+            <!-- Project Description -->
+            <section class="project-description">
+                <p>
+                    The project cycles through traffic phases as follows: Road 1
+                    & 3 start green; Road 2 & 4 red. After 10s, Road 2 & 4 get
+                    yellow, and by 15s, they switch to green. Road 1 & 3 then go
+                    red. The entire cycle repeats with appropriate yellow
+                    transitions.
+                </p>
+            </section>
+
+            <!-- Step-by-Step Networks with Explanations -->
+            <section class="project-steps">
+
+                <div class="step">
+                    <img src="../images/1p.jpg" alt="Network 1" />
+                    <p><b>🟢 Network 1: Green 1 & 3 ON (Start Phase)</b></p>
+                    <ul class="custom-list">
+                        <li><span class="tag-input">I0.0</span> – Start button
+                            pressed</li>
+                        <li><span class="tag-output">Q0.0</span> (Green 1) and
+                            <span class="tag-output">Q0.4</span> (Green 3) turn
+                            ON</li>
+                        <li><span class="tag-timer">T1</span> (15s S_ODT timer)
+                            starts</li>
+                    </ul>
+                </div>
+
+                <hr />
+
+                <div class="step">
+                    <img src="../images/2p.jpg" alt="Network 2" />
+                    <p><b>🔴 Network 2: Red 2 & 4 ON (Simultaneous)</b></p>
+                    <p>During the same 15s, <span class="tag-output">Q1.5</span>
+                        (Red 2) and <span class="tag-output">Q1.2</span> (Red 4)
+                        turn ON.</p>
+                </div>
+
+                <hr />
+
+                <div class="step">
+                    <img src="../images/3p.jpg" alt="Network 3" />
+                    <p><b>🟡 Network 3: Yellow 2 & 4 ON (After 10s)</b></p>
+                    <ul class="custom-list">
+                        <li><span class="tag-timer">T4</span> starts at
+                            beginning</li>
+                        <li><span class="tag-timer">T5</span> triggers at 10s,
+                            enabling:</li>
+                        <li><span class="tag-output">Q1.6</span> (Yellow 2) and
+                            <span class="tag-output">Q1.1</span> (Yellow 4)</li>
+                    </ul>
+                </div>
+
+                <hr />
+
+                <div class="step">
+                    <img src="../images/4p.jpg" alt="Network 4" />
+                    <p><b>🟢 Network 4: Green 2 & 4 ON (After 15s)</b></p>
+                    <p>After <span class="tag-timer">T1</span> finishes:
+                        <ul>
+                            <li><span class="tag-output">Q1.4</span> (Green 2)
+                                and <span class="tag-output">Q1.0</span> (Green
+                                4) turn ON</li>
+                            <li><span class="tag-output">Q0.2</span> (Red 1) and
+                                <span class="tag-output">Q0.6</span> (Red 3)
+                                also activate</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <hr />
+
+                <div class="step">
+                    <img src="../images/5p.jpg" alt="Network 5" />
+                    <p><b>🔴 Network 5: Red 1 & 3 ON</b></p>
+                    <p>Ensures <span class="tag-output">Q0.2</span> and <span
+                            class="tag-output">Q0.6</span> remain ON while Road
+                        2 & 4 are green.</p>
+                </div>
+
+                <hr />
+
+                <div class="step">
+                    <img src="../images/6p.jpg" alt="Network 6" />
+                    <p><b>🟡 Network 6: Yellow 1 & 3 ON (Transition
+                            Back)</b></p>
+                    <p><span class="tag-output">Q0.1</span> (Yellow 1) and <span
+                            class="tag-output">Q0.5</span> (Yellow 3) prepare
+                        Road 1 & 3 to go Green again.</p>
+                </div>
+
+                <hr />
+
+                <div class="step summary-box">
+                    <h3>⏱️ Full Cycle Timing Summary</h3>
+                    <table>
+                        <tr><th>Time</th><th>Status</th><th>Description</th></tr>
+                        <tr><td>0s</td><td>Green 1, Green 3<br>Red 2, Red
+                                4</td><td>Start Phase</td></tr>
+                        <tr><td>10s</td><td>Yellow 2, Yellow
+                                4</td><td>Transition for Road 2 & 4</td></tr>
+                        <tr><td>15s</td><td>Green 2, Green 4<br>Red 1, Red
+                                3</td><td>Switch Phase</td></tr>
+                        <tr><td>25s</td><td>Yellow 1, Yellow
+                                3</td><td>Transition back</td></tr>
+                        <tr><td>30s</td><td>Cycle Repeats</td><td>Return to
+                                Start</td></tr>
+                    </table>
+                </div>
+
+            </section>
+        </main>
+
+        <section class="pdf-download-section">
+            <div class="container">
+                <h2>📄 Download Full Ladder Logic</h2>
+                <p>Click below to download the PDF of the complete program.</p>
+                <a href="$way traffic control (2).pdf" download
+                    class="btn-primary">Download PDF</a>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2025 Soumya Samanta. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
+</html>
