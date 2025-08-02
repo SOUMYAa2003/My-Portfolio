@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isDeleting = false;
   const typeSpeed = 100;
   const deleteSpeed = 50;
-  const delayBetweenMessages = 1500; // pause after typing each line
+  const delayBetweenMessages = 1200; // pause after typing each line
 
   const typewriterElement = document.getElementById("typewriter");
 
