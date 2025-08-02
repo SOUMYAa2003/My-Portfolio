@@ -10,6 +10,8 @@
   <!-- Responsive Stylesheet -->
   <link rel="stylesheet" href="STYLES/responsive.css" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+ 
+
 </head>
 <body>
  <!-- HEADER -->
@@ -39,13 +41,18 @@
 
 <!-- HERO SECTION -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-      <h2>Hi, I'm Soumya</h2>
-      <p>PLC Programmer passionate about automation and industrial control systems. This is my portfolio to showcase real-world projects and skills.</p>
-      <a href="#projects" class="btn-primary">View Projects</a>
-    </div>
+  <div class="typewriter-container">
+    <h2 class="typewriter-wrapper">
+      <span id="typewriter"></span>
+      <span class="placeholder" aria-hidden="true">Automation Enthusiast</span>
+    </h2>
   </div>
+
+
+  <p>PLC Programmer passionate about automation and industrial control systems. This is my portfolio to showcase real-world projects and skills.</p>
+  <a href="#projects" class="btn-primary">View Projects</a>
+    
+  
 </section>
 
 
@@ -78,49 +85,49 @@
 
   <div class="projects-container">
     
-    <div class="project-card">
+    <div class="project-card" data-category="automation" >
       
-      <img src="images/luca-bravo-XJXWbfSo2f0-unsplash.jpg" alt="Water Tank Level Control" class="project-img" />
+      <img src="images/casey-schackow-kvovQCb1gfY-unsplash.jpg" alt="Water Tank Level Control" class="project-img" />
       <h3 class="project-title">Water Tank Level Control</h3>
       <p class="project-desc">Monitored and maintained water levels...</p>
       <div class="project-meta">
         <span>📅 April 2024</span>
         <span>🔧 Completed</span>
       </div>
-      <a href="projects/project1.html" class="view-btn">🔎 View Details</a>
+      <a href="projects/project1.html" class="view-btn">💬 View Details</a>
     </div>
 
-    <div class="project-card">
-      <img src="images/alexandre-debieve-FO7JIlwjOtU-unsplash (1).jpg" alt="Traffic Light Controller" class="project-img" />
+    <div class="project-card" data-category="traffic">
+      <img src="images/clay-banks-mo_VkVzwBSc-unsplash.jpg" alt="Traffic Light Controller" class="project-img" />
       <h3 class="project-title">4-Way Traffic Light Controller</h3>
       <p class="project-desc">Created a smart signal control system...</p>
       <div class="project-meta">
         <span>📅 May 2024</span>
         <span>🔧 Completed</span>
       </div>
-      <a href="projects/project2.html" class="view-btn">🔎 View Details</a>
+      <a href="projects/project2.html" class="view-btn">💬  View Details</a>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="automation" >
       <img src="images/homa-appliances-pWUyHVJgLhg-unsplash.jpg" alt="Conveyor Sorting System" class="project-img" />
       <h3 class="project-title">Conveyor Sorting System</h3>
       <p class="project-desc">Used sensors and timers to automatically...</p>
       <div class="project-meta">
         <span>📅 June 2024</span>
-        <span>🔧 in-progress</span>
+        <span>⏳ in-progress</span>
       </div>
-      <a href="projects/project3.html" class="view-btn">🔎 View Details</a>
+      <a href="projects/project3.html" class="view-btn">💬 View Details</a>
     </div>
 
-    <div class="project-card">
+    <div class="project-card" data-category="automation" >
       <img src="images/jan-kopriva-sh_7sFEFICI-unsplash.jpg" alt="Automatic Car Wash System" class="project-img" />
       <h3 class="project-title">Automatic Car Wash System</h3>
       <p class="project-desc">Designed using Siemens S7-300 PLC...</p>
       <div class="project-meta">
         <span>📅 July 2024</span>
-        <span>🔧 in-progress</span>
+        <span>⏳ in-progress</span>
       </div>
-      <a href="projects/project4.html" class="view-btn">🔎 View Details</a>
+      <a href="projects/project4.html" class="view-btn">💬 View Details</a>
     </div>
   </div>
 
@@ -146,7 +153,7 @@
       <div class="skill-card"><i class="fas fa-wrench"></i> HMI Design</div>
       <div class="skill-card"><i class="fas fa-code"></i> TIA Portal</div>
       <div class="skill-card"><i class="fas fa-desktop"></i> Simatic Manager</div> <!-- NEW -->
-      <div class="skill-card"><i class="fab fa-html5"></i> HTML/CSS</div>
+      
     </div>
   </div>
 </section>
@@ -176,46 +183,7 @@
 </footer>
 
   <!-- Optional Minimal JavaScript -->
-<script>
-  
-  const searchBox = document.getElementById("searchBox");
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
-
-  searchBox.addEventListener("input", () => {
-    const term = searchBox.value.toLowerCase();
-    projectCards.forEach(card => {
-      const title = card.querySelector(".project-title").textContent.toLowerCase();
-      card.style.display = title.includes(term) ? "block" : "none";
-    });
-  });
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const category = btn.dataset.category;
-
-      projectCards.forEach(card => {
-        if (category === "all" || card.dataset.category === category) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
-    });
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menuToggle");
-    const nav = document.querySelector(".nav-links");
-
-    menuToggle.addEventListener("click", () => {
-      nav.classList.toggle("active");
-      menuToggle.classList.toggle("active");
-    });
-  });
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
