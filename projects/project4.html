@@ -1,0 +1,130 @@
+<!-- project4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Object Sorting Conveyor - PLC Project</title>
+  <link rel="stylesheet" href="../STYLES/project.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <h1 class="project-title">📦 Object Sorting Conveyor</h1>
+    <p class="subtitle">A PLC-based Object Detection and Sorting Project using S7-300</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="project-overview">
+    <h2>📘 Project Overview</h2>
+    <p>This PLC project is designed to sort objects based on their size (small, medium, and large) using sensors and actuators. The system uses Siemens S7-300 PLC and includes timers, memory bits, and pusher outputs to sort the objects at the correct stations.</p>
+  </section>
+
+  <section class="main-project-image">
+    <img src="../images/conveyor-main.png" alt="Conveyor PLC Setup" />
+  </section>
+
+  <section class="project-steps">
+
+    <div class="step">
+      <img src="../images/1_conveyor.png" alt="Start Logic" />
+      <p><b>🟢 Network 1: Start Logic of Conveyor</b></p>
+      <ul>
+        <li><code>M0.0</code> – "Start PB" input push button.</li>
+        <li><code>M0.1</code> – "Start bit" (internal memory) set when Start PB is pressed.</li>
+        <li><code>M0.1</code> latches and is used throughout the program as system ON indicator.</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div class="step">
+      <img src="../images/2_conveyor.png" alt="Small Object Logic" />
+      <p><b>🟡 Network 2: Detect Small Size Object</b></p>
+      <ul>
+        <li><code>M0.1</code> – System ON condition.</li>
+        <li><code>I0.0</code> – Small size sensor must be ON.</li>
+        <li><code>I0.1</code> – Medium sensor must be OFF.</li>
+        <li><code>I0.2</code> – Large sensor must be OFF.</li>
+        <li><code>T1</code> – ON Delay Timer to avoid false triggering.</li>
+        <li><code>I0.5</code> – Confirm pusher not already diverted.</li>
+        <li><code>M0.2</code> – Memory bit to store small object detection.</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div class="step">
+      <img src="../images/3_conveyor.png" alt="Medium Object Logic" />
+      <p><b>🟠 Network 3: Detect Medium Size Object</b></p>
+      <ul>
+        <li>All sensors <code>I0.0</code>, <code>I0.1</code>, <code>I0.2</code> are checked.</li>
+        <li>Only Medium sensor <code>I0.1</code> should be ON; others OFF.</li>
+        <li><code>T2</code> is triggered and starts <code>T4</code> (medium timer).</li>
+        <li><code>M0.3</code> – Memory bit for medium object detection.</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div class="step">
+      <img src="../images/4_conveyor.png" alt="Large Object Logic" />
+      <p><b>🔴 Network 4: Detect Large Size Object</b></p>
+      <ul>
+        <li><code>M0.1</code> – System ON.</li>
+        <li>Large sensor <code>I0.2</code> must be ON, others OFF.</li>
+        <li><code>T2</code> and <code>T5</code> used for large delay timing.</li>
+        <li><code>M0.4</code> – Large object detected memory bit.</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div class="step">
+      <img src="../images/5_conveyor.png" alt="Divert Medium Object" />
+      <p><b>🔁 Network 5: Logic to Divert Medium Object</b></p>
+      <ul>
+        <li><code>M0.1</code> – System ON.</li>
+        <li><code>M0.3</code> – Medium object detected.</li>
+        <li><code>I0.4</code> – Medium object reaches pusher area.</li>
+        <li><code>Q0.2</code> – Activates medium object pusher.</li>
+        <li><code>T4</code> – Timing control for pusher operation.</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <div class="step">
+      <img src="../images/6_conveyor.png" alt="Divert Large Object" />
+      <p><b>🔁 Network 6: Logic to Divert Large Object</b></p>
+      <ul>
+        <li><code>M0.1</code> – System ON.</li>
+        <li><code>M0.4</code> – Large object detected.</li>
+        <li><code>I0.3</code> – Large object reaches diversion area.</li>
+        <li><code>Q0.1</code> – Activates large object pusher.</li>
+        <li><code>T5</code> – Time delay for actuator.</li>
+      </ul>
+    </div>
+
+  </section>
+</main>
+
+<section class="pdf-download-section">
+  <div class="container">
+    <h2>📄 Full Ladder Logic Program</h2>
+    <p>You can download the full PLC ladder logic diagram (PDF format) used in this object sorting conveyor project below.</p>
+    <a href="" download class="btn-primary">Download PDF</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
